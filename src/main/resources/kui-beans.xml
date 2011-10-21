@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+       
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesMode"><util:constant static-field="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.SYSTEM_PROPERTIES_MODE_OVERRIDE" /></property>
+        <property name="locations">
+            <value>classpath:kui.properties</value>
+        </property>
+    </bean>
+
+	<bean name="userController" class="com.marker55.apps.kui.controller.UserController">
+		<constructor-arg ref="userService" />
+	</bean>
+
+	<bean name="configurationController" class="com.marker55.apps.kui.controller.ConfigurationController">
+		<constructor-arg ref="configurationService" />
+	</bean>
+
+	<bean name="mbeanController" class="com.marker55.apps.kui.controller.MBeanController">
+		<constructor-arg ref="jmxService" />
+	</bean>
+
+	<bean name="mbeanAttributeController"
+		class="com.marker55.apps.kui.controller.MBeanAttributeController">
+		<constructor-arg ref="jmxService" />
+	</bean>
+
+	<bean name="mbeanOperationController"
+		class="com.marker55.apps.kui.controller.MBeanOperationController">
+		<constructor-arg ref="jmxService" />
+	</bean>
+	
+	<bean name="authenticationInterceptor" class="com.marker55.apps.kui.servlet.AuthenticationInterceptor">
+		<constructor-arg ref="configurationService" />
+	</bean>
+
+	<bean name="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="authenticationInterceptor" />
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/configuration.json">configurationController</prop>
+				<prop key="/user.json">userController</prop>
+				<prop key="/mbeans.json">mbeanController</prop>
+				<prop key="/attribute.json">mbeanAttributeController</prop>
+				<prop key="/operation.json">mbeanOperationController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="userService" class="com.marker55.apps.kui.domain.service.UserService">
+		<constructor-arg value="${kui.username}" />
+		<constructor-arg value="${kui.password}" />
+	</bean>
+
+	<bean name="configurationService" class="com.marker55.apps.kui.domain.service.ConfigurationService">
+		<constructor-arg ref="userService" />
+	</bean>
+
+	<bean name="jmxService" class="com.marker55.apps.kui.domain.service.JMXService">
+		<constructor-arg ref="attributeConverter" />
+	</bean>
+
+	<bean name="attributeConverter"
+		class="com.marker55.apps.kui.domain.service.MBeanAttributeConverter">
+		<property name="booleanConverter" ref="booleanConverter" />
+		<property name="byteConverter" ref="byteConverter" />
+		<property name="characterConverter" ref="characterConverter" />
+		<property name="doubleConverter" ref="doubleConverter" />
+		<property name="floatConverter" ref="floatConverter" />
+		<property name="integerConverter" ref="integerConverter" />
+		<property name="longConverter" ref="longConverter" />
+		<property name="shortConverter" ref="shortConverter" />
+	</bean>
+
+	<bean name="booleanConverter"
+		class="org.apache.commons.beanutils.converters.BooleanConverter" />
+
+	<bean name="byteConverter" class="org.apache.commons.beanutils.converters.ByteConverter" />
+
+	<bean name="characterConverter"
+		class="org.apache.commons.beanutils.converters.CharacterConverter" />
+
+	<bean name="doubleConverter"
+		class="org.apache.commons.beanutils.converters.DoubleConverter" />
+
+	<bean name="floatConverter"
+		class="org.apache.commons.beanutils.converters.FloatConverter" />
+
+	<bean name="integerConverter"
+		class="org.apache.commons.beanutils.converters.IntegerConverter" />
+
+	<bean name="longConverter" class="org.apache.commons.beanutils.converters.LongConverter" />
+
+	<bean name="shortConverter"
+		class="org.apache.commons.beanutils.converters.ShortConverter" />
+
+</beans>

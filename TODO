@@ -1,0 +1,16 @@
+TODO
+========================================
+* 2010-01-24 - Make clicking tree folder expand folder.
+* 2010-01-24 - Add error message for invoke timeout.
+* 2010-01-24 - Make MBean highlighted in tree upon activating open tab.
+* 2010-01-13 - Add Groovy console for scripting.
+* 2010-01-13 - Add graphing for number values.
+* 2010-01-09 - Fix Opera issues.  Focus stays on buttons after invoking and can be invoked again by hitting space button.
+* 2009-12-18 - Make <enter> submit login form.
+* 2009-12-18 - Hide headers if no attributes/operations.
+* 2009-12-18 - Fix 'gradual' display on MBean tabs.
+* 2009-12-18 - Make MBean tabs linkable via hash.
+* 2009-12-18 - Make embeddable by using internal servlet container.
+* 2009-12-18 - Add resource versions to JS includes.
+* 2009-12-18 - Make NodeTree ExtJS-agnostic.
+* 2009-12-18 - Add help system.

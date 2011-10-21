@@ -1,0 +1,20 @@
+
+.icon-info {
+    background-image: url(../../javascript/ext-3.0.3/resources/images/default/window/icon-info.gif) !important;
+}
+
+.icon-refresh {
+    background-image: url(../../javascript/ext-3.0.3/resources/images/default/grid/refresh.gif) !important;
+}
+
+.icon-help {
+    background-image: url(../../javascript/ext-custom/resources/images/default/docs.gif) !important;
+}
+
+.icon-expand-all {
+    background-image: url(../../javascript/ext-custom/resources/images/default/tree/expand-all.gif) !important;
+}
+
+.icon-collapse-all {
+    background-image: url(../../javascript/ext-custom/resources/images/default/tree/collapse-all.gif) !important;
+}
