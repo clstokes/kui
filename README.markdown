@@ -11,7 +11,10 @@ kui is deployed as a web application in your application server or servlet conta
 The only configuration option in kui is to specify a username and password which are as system properties by kui at startup; the parameter names are kui.username and kui.password. Many application servers allow you to set system properties in your server configuration or in some cases they can be specified via your startup command.
 
 Here is a simple example using the Resin application server:
+
+<pre>
 java -Dkui.username=username -Dkui.password=password -jar lib/resin.jar console
+</pre>
 
 ## Logging
 
