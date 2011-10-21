@@ -4,7 +4,7 @@
 
 ## Deployment
 
-**kui** is deployed as a web application in your application server or servlet container. Just drop the **kui**.war file where your other web applications are deployed, start your container and you're good to go. See the Configuration section below for configuration options.
+**kui** is deployed as a web application in your application server or servlet container. Just drop the _kui.war_ file where your other web applications are deployed, start your container and you're good to go. See the Configuration section below for configuration options.
 
 ## Configuration
 
