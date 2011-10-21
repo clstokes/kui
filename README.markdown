@@ -21,6 +21,6 @@ kui uses slf4j for logging and is packaged with the JDK14 implementation. This c
 
 kui requires Java 5 or higher and a supported container: Apache Tomcat 5.x/6.x, Glassfish v3, JBoss Application Server 6.0.0M1, Jetty 6.1.22, and Resin 3.x/4.x.
 
-## Downloads
+## Browser Support
 
 kui has been tested with the following web browsers: Chrome 4.0, Firefox 3.5, Internet Explorer 8.0, Opera 10.10, and Safari 4.0.
