@@ -8,7 +8,7 @@
 
 ## Configuration
 
-The only configuration option in **kui** is to specify a username and password which are as system properties by **kui** at startup; the parameter names are _**kui**.username_ and _**kui**.password_. Many application servers allow you to set system properties in your server configuration or in some cases they can be specified via your startup command.
+The only configuration option in **kui** is to specify a username and password which are as system properties by **kui** at startup; the parameter names are _kui.username_ and _kui.password_. Many application servers allow you to set system properties in your server configuration or in some cases they can be specified via your startup command.
 
 Here is a simple example using the Resin application server:
 
