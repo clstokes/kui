@@ -1,6 +1,6 @@
 ## What is kui?
 
-**kui** is a modern, browser-based administration tool for Java applications supporting the JMX specification. **kui** is designed to be deployed along-side existing web applications in an application server or servlet container.
+**kui** is a web console for JMX administration of Java applications. **kui** is built using Spring and ExtJS. 
 
 ## Deployment
 
